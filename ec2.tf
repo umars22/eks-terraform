@@ -23,6 +23,7 @@ resource "aws_instance" "my-instance" {
   
   provisioner "remote-exec" {
     inline = [
+      "sudo su -",
       "chmod +x /tmp/userdata.sh",
       "sudo /tmp/userdata.sh",
       "sudo echo 'big-bruh' | sudo tee /etc/hostname",
